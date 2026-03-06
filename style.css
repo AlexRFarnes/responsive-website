@@ -1,3 +1,24 @@
+/* Colors */
+:root {
+  --c-white: hsl(0, 0%, 100%);
+  --c-gray-dark: hsl(233, 14%, 25%);
+  --c-purle: hsl(232, 58%, 55%);
+  --c-teal: hsl(180, 100%, 42%);
+  --c-transparent: transparent;
+  --c-magenta: #bf1085;
+
+  --color-main-bg: var(--c-white);
+  --color-text-dark: var(--c-gray-dark);
+  --color-text-light: var(--c-white);
+  --color-hero-bg: var(--c-purle);
+  --color-button-primary-bg: var(--c-teal);
+  --color-button-primary-text: var(--c-gray-dark);
+  --color-button-secondary-bg: var(--c-transparent);
+  --color-button-secondary-border: var(--c-white);
+  --color-button-secondary-text: var(--c-white);
+  --color-fullwidth-bg: var(--c-magenta);
+}
+
 *,
 *::before,
 *::after {
@@ -17,4 +38,16 @@ picture,
 svg {
   max-width: 100%;
   display: block;
+}
+
+/* Note: spaces like margin, padding, etc. are calculated in pixels */
+/* For font sizes, we use rem */
+.wrapper {
+  /* Wrapper width */
+  width: min(
+    calc(100% - 48px),
+    calc(1200 / 16 * 1rem)
+      /* 1200 is the max width of the wrapper, 16 is the base font size, convert to rem */
+  );
+  margin-inline: auto;
 }
