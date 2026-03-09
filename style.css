@@ -55,6 +55,7 @@ override rules in the previous layers regarding of the specificity of the select
     --color-main-bg: var(--c-white);
     --color-text-dark: var(--c-gray-dark);
     --color-text-light: var(--c-white);
+    --color-header-bg: var(--c-purle);
     --color-hero-bg: var(--c-purle);
     --color-button-primary-bg: var(--c-teal);
     --color-button-primary-text: var(--c-gray-dark);
@@ -124,6 +125,28 @@ override rules in the previous layers regarding of the specificity of the select
 }
 
 @layer component {
+  .topnav {
+    background: var(--color-header-bg);
+    .topnav__homelink {
+    }
+    .topnav__logo {
+    }
+    .topnav__nav {
+    }
+    .topnav__links {
+      list-style-type: none;
+      padding: 0;
+    }
+    .topnav__item {
+    }
+    
+    .topnav__link {
+      font-size: var(--font-size-topnav);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+  }
 }
 
 @layer utility {
@@ -135,5 +158,14 @@ override rules in the previous layers regarding of the specificity of the select
     width: 1px;
     height: 1px;
     overflow: hidden;
+
+    &.skip:focus {
+      left: 0;
+      width: auto;
+      height: auto;
+      background: var(--color-main-bg);
+      padding: 10px;
+      border: 1px solid;
+    }
   }
 }
