@@ -184,6 +184,34 @@ override rules in the previous layers regarding of the specificity of the select
       }
     }
   }
+
+  .hero {
+    background: var(--color-hero-bg);
+    color: var(--color-text-light);
+
+    .hero__wrapper {
+    }
+
+    .hero__image {
+      margin-inline: auto;
+      width: calc(200 /  16 * 1rem);
+
+      @media (width >= calc(600/16 * 1rem)) {
+        width: calc(483 / 16 * 1rem);
+    }
+
+    .hero__text {
+    }
+
+    .hero__title {
+    }
+
+    .hero__content {
+    }
+
+    .hero_buttons {
+    }
+  }
 }
 
 @layer utility {
