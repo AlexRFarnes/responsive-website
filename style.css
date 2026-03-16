@@ -25,7 +25,10 @@ override rules in the previous layers regarding of the specificity of the select
   :root {
     --fs-14: calc(14 / 16 * 1rem);
     --fs-16: calc(16 / 16 * 1rem);
+    --fs-18: calc(18 / 16 * 1rem);
+    --fs-20: calc(20 / 16 * 1rem);
     --fs-24: calc(24 / 16 * 1rem);
+    --fs-28: calc(28 / 16 * 1rem);
     --fs-36: calc(36 / 16 * 1rem);
     --fs-42: calc(42 / 16 * 1rem);
     --fs-48: calc(48 / 16 * 1rem);
@@ -112,6 +115,26 @@ override rules in the previous layers regarding of the specificity of the select
     display: block;
   }
 
+  p {
+    font-size: var(--fs-18);
+
+    &.medium {
+      font-size: var(--fs-20);
+
+      @media (width >= calc(600/16 * 1rem)) {
+        font-size: var(--fs-24);
+      }
+    }
+
+    &.large {
+      font-size: var(--fs-24);
+
+      @media (width >= calc(600/16 * 1rem)) {
+        font-size: var(--fs-28);
+      }
+    }
+  }
+
   /* Note: spaces like margin, padding, etc. are calculated in pixels */
   /* For font sizes, we use rem */
   .wrapper {
@@ -190,23 +213,36 @@ override rules in the previous layers regarding of the specificity of the select
     color: var(--color-text-light);
 
     .hero__wrapper {
+      padding-block: 30px 60px;
+
+      @media (width >= calc(600/16 * 1rem)) {
+        padding-block: 40px 80px;
+      }
     }
 
     .hero__image {
       margin-inline: auto;
-      width: calc(200 /  16 * 1rem);
+      width: calc(200 / 16 * 1rem);
+      margin-block-end: 40px;
 
       @media (width >= calc(600/16 * 1rem)) {
         width: calc(483 / 16 * 1rem);
+      }
     }
 
     .hero__text {
     }
 
     .hero__title {
+      margin-block-end: 12px;
+
+      @media (width >= calc(600/16 * 1rem)) {
+        margin-block-end: 20px;
+      }
     }
 
     .hero__content {
+      margin-block-end: 40px;
     }
 
     .hero_buttons {
