@@ -325,17 +325,17 @@ override rules in the previous layers regarding of the specificity of the select
 
       @media (width >= calc(1000 / 16 * 1rem)) {
         grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .features__item {
       display: grid;
       grid-auto-rows: min-content;
       gap: 10px;
-      
+
       @media (width < calc(1000 / 16 * 1rem)) {
         justify-items: center;
         text-align: center;
-        
       }
     }
 
@@ -350,6 +350,31 @@ override rules in the previous layers regarding of the specificity of the select
 
     .features__description {
       max-width: 40ch;
+    }
+  }
+
+  .fw-feature {
+    background: var(--color-fullwidth-bg);
+    color: var(--color-text-light);
+    text-align: center;
+
+    .fw-feature__wrapper {
+      display: grid;
+      justify-items: center;
+    }
+
+    .fw-feature__title {
+      margin-block-end: 20px;
+    }
+
+    .fw-feature__description {
+      margin-block-end: 40px;
+      max-width: 80ch;
+    }
+
+    .fw-feature__img {
+      width: 100%;
+      max-width: calc(792 / 16 * 1rem);
     }
   }
 }
