@@ -55,7 +55,7 @@ override rules in the previous layers regarding of the specificity of the select
   :root {
     --c-white: hsl(0, 0%, 100%);
     --c-gray-dark: hsl(233, 14%, 25%);
-    --c-purle: hsl(232, 58%, 55%);
+    --c-purple: hsl(232, 58%, 55%);
     --c-teal: hsl(180, 100%, 42%);
     --c-teal-dark: hsl(180, 100%, 37%);
     --c-transparent: transparent;
@@ -64,19 +64,26 @@ override rules in the previous layers regarding of the specificity of the select
     --color-main-bg: var(--c-white);
     --color-text-dark: var(--c-gray-dark);
     --color-text-light: var(--c-white);
-    --color-header-bg: var(--c-purle);
-    --color-hero-bg: var(--c-purle);
+    --color-header-bg: var(--c-purple);
+    --color-hero-bg: var(--c-purple);
     --color-button-primary-bg: var(--c-teal);
     --color-button-primary-bg-hover: var(--c-teal-dark);
     --color-button-primary-text: var(--c-gray-dark);
     --color-button-primary-border: var(--c-teal);
     --color-button-primary-border-hover: var(--c-teal-dark);
+    --color-button-primary-white-bg: var(--c-white);
+    --color-button-primary-white-text: var(--c-gray-dark);
+    --color-button-primary-white-border: var(--c-white);
+    --color-button-primary-white-border-hover: var(--c-teal);
     --color-button-secondary-bg: var(--c-transparent);
     --color-button-secondary-bg-hover: var(--c-white);
     --color-button-secondary-border: var(--c-white);
     --color-button-secondary-text: var(--c-white);
     --color-button-secondary-text-hover: var(--color-hero-bg);
     --color-fullwidth-bg: var(--c-magenta);
+    --color-cta-gradient-1: var(--c-gray-dark);
+    --color-cta-gradient-2: var(--c-purple);
+    --color-cta-gradient-3: var(--c-teal);
   }
 
   /* Reset and base styles */
@@ -169,6 +176,24 @@ override rules in the previous layers regarding of the specificity of the select
       padding-block: 80px;
     }
   }
+
+  .full-width {
+    text-align: center;
+
+    .full-width__wrapper {
+      display: grid;
+      justify-items: center;
+    }
+
+    .full-width__title {
+      margin-block-end: 20px;
+    }
+
+    .full-width__description {
+      margin-block-end: 40px;
+      max-width: 80ch;
+    }
+  }
 }
 
 @layer component {
@@ -192,6 +217,17 @@ override rules in the previous layers regarding of the specificity of the select
       &:hover {
         background: var(--color-button-primary-bg-hover);
         border-color: var(--color-button-primary-border-hover);
+      }
+
+      &.white {
+        background: var(--color-button-primary-white-bg);
+        border-color: var(--color-button-primary-white-border);
+        color: var(--color-button-primary-white-text);
+
+        &:hover {
+          background: var(--color-button-primary-bg-hover);
+          border-color: var(--color-button-primary-border-hover);
+        }
       }
     }
 
@@ -360,21 +396,6 @@ override rules in the previous layers regarding of the specificity of the select
   .fw-feature {
     background: var(--color-fullwidth-bg);
     color: var(--color-text-light);
-    text-align: center;
-
-    .fw-feature__wrapper {
-      display: grid;
-      justify-items: center;
-    }
-
-    .fw-feature__title {
-      margin-block-end: 20px;
-    }
-
-    .fw-feature__description {
-      margin-block-end: 40px;
-      max-width: 80ch;
-    }
 
     .fw-feature__img {
       width: 100%;
@@ -431,6 +452,26 @@ override rules in the previous layers regarding of the specificity of the select
 
     .testimonial__author-description {
       font-size: var(--font-size-quote-author);
+    }
+  }
+
+  .fw-cta {
+    background: linear-gradient(
+      to right,
+      var(--color-cta-gradient-1),
+      var(--color-cta-gradient-2) 85%,
+      var(--color-cta-gradient-3) 150%
+    );
+    color: var(--color-text-light);
+    text-align: center;
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      background: linear-gradient(
+        to right,
+        var(--color-cta-gradient-1),
+        var(--color-cta-gradient-2) 55%,
+        var(--color-cta-gradient-3) 110%
+      );
     }
   }
 }
